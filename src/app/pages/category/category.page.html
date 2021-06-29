@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <p class="ion-text-center">category name</p>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="goToFav()">
+        <ion-badge color="danger">4</ion-badge>
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="goToCart()">
+        <ion-badge color="danger">4</ion-badge>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="search here" (ionChange)="onSearchChange($event)" [debounce]="250">
+  </ion-searchbar>
+
+  <!-- ************************************************************* 
+    <div class="search ion-padding">
+      <ion-item lines="none">
+        <ion-input placeholder="Search Your Product"></ion-input>
+        <ion-icon name="search-outline" slot="start"></ion-icon>
+      </ion-item>
+    </div>
+    .search {
+      margin-bottom: 20px;
+      width: 100%;
+      ion-item {
+          border-radius: 10px;
+          box-shadow: 0px 13px 30px 0px rgba(0, 0, 0, 0.09);
+          padding: 8px;
+  
+          ion-icon {
+              margin-right: 16px;
+          }
+  
+          ion-input {
+              padding-left: 10px !important;
+              border-left: 1px solid #F4F4F4;
+          }
+      }
+  }
+    -->
+
+  <h1>category name</h1>
+  <div class="divider">
+    <div *ngFor="let item of arr; trackBy:trackByItem" class="type" (click)="onClick(item.id)"
+      [class.active]='selected==item.id'>
+      {{item.type}}
+    </div>
+    <div *ngFor="let item of arr; trackBy:trackByItem" class="products">
+      <ion-label *ngIf="selected == item.id"> {{item.products}} </ion-label>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-split-pane contentId='main'>
+  <ion-menu contentId='main' [disabled]='!isMenuEnapled'>
+    <ion-content>
+
+      <div class="main-list">
+        <ion-list>
+          <ion-menu-toggle autoHide='false'>
+
+            <ion-item lines='none' *ngFor="let p of pages; trackBy:trackByList" [routerLink]='p.url'
+              [class.active]='selected == p.id' (click)="onNav(p.id)">
+              <ion-label>{{p.name}}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+      </div>
+      <!-- Close Button -->
+      <ion-button fill="clear" color="dark" (click)="close()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-split-pane>

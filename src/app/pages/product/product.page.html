@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button>
+        <img src="../../../assets/menu_bar.svg" alt="">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../../assets/mylogo_200x200.png"></ion-img>
+    <ion-buttons slot="end">
+
+      <ion-button (click)="goToFav()">
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-badge color="danger">4</ion-badge>
+      </ion-button>
+
+      <ion-button (click)="goToCart()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger">4</ion-badge>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Search bar -->
+  <div class="search ion-padding">
+    <ion-item lines='none'>
+      <ion-input placeholder='search your products'></ion-input>
+      <ion-icon slot="start" name="search-outline"></ion-icon>
+    </ion-item>
+  </div>
+
+  <!-- product details -->
+  <div class="pic">
+    <img src="../../../assets/p1.png" alt="" />
+  </div>
+
+  <div class="ion-padding-horizontal">
+
+    <ion-row class="details-1">
+      <ion-col size="9">
+        <h3 class="item-name">Black turtleneck</h3>
+      </ion-col>
+
+      <ion-col size="3" class="fav">
+        <ion-icon color='danger' name="heart-outline"></ion-icon>
+        <ion-icon *ngIf="false" color='danger' name="heart"></ion-icon>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="details-2">
+      <ion-col size="4">
+        <h5 class="price">55$</h5>
+      </ion-col>
+
+      <ion-col size="8" class="assess">
+        <div class="p-assess">
+          <ion-label>0</ion-label>
+          <ion-icon name="star"></ion-icon>
+        </div>
+      </ion-col>
+
+      <div class="description">
+        <h5>Description</h5>
+
+        <p>
+          A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy
+          with my whole heart.
+          souls like mine.
+        </p>
+      </div>
+    </ion-row>
+  </div>
+
+  <!-- segments -->
+  <div class="variation ion-padding-horizontal">
+    <ion-segment mode='ios' value="size" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="size">
+        <ion-label>Select size</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="color">
+        <ion-label>Select color</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="variation-selector" >
+    <div class="sizes" *ngIf="activeVariation=='size'" [class.active-variation]='activeVariation == "size"'>
+      <div [class.active]='selectedSize ==1' (click)="changeSize(1)">
+        S
+      </div>
+      <div [class.active]='selectedSize ==2' (click)="changeSize(2)">
+        M
+      </div>
+      <div [class.active]='selectedSize ==3' (click)="changeSize(3)">
+        L
+      </div>
+    </div>
+
+    <div class="colors" *ngIf="activeVariation=='color'" [class.active-variation]='activeVariation == "color"'>
+      <div [class.active]='selectedColor ==1' (click)="changeColor(1)">
+        Black
+      </div>
+      <div [class.active]='selectedColor ==2' (click)="changeColor(2)">
+        White
+      </div>
+      <div [class.active]='selectedColor ==3' (click)="changeColor(3)">
+        Grey
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+<ion-row>
+  <ion-col size="6">
+    <ion-button color='light' expand="full">
+      Add to Cart
+    </ion-button>
+  </ion-col>
+  <ion-col size="6">
+    <ion-button color='primary' expand="full">
+      Share
+    </ion-button>
+  </ion-col>
+</ion-row>
+</ion-footer>

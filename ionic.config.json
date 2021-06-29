@@ -1,5 +1,7 @@
 {
   "name": "matgrk",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

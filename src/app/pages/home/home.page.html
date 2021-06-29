@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="../../../assets/menu_bar.svg" alt="">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../../assets/mylogo_200x200.png"></ion-img>
+    <ion-buttons slot="end">
+
+      <ion-button routerLink='../favourite'>
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-badge color="danger">4</ion-badge>
+      </ion-button>
+
+      <ion-button routerLink='../cart'>
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger">4</ion-badge>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- -********************************************************************** -->
+
+<ion-content>
+  <ion-row class="content">
+
+    <!-- All Categories -->
+    <ion-col class="hori-scroll" size="12" size-md="12" size-lg="6">
+      <div class="avatar" *ngFor="let cate of myCats">
+        <div class="category">
+          <img [src]='cate.picUrl' alt="">
+        </div>
+        <ion-label> {{cate.name}} </ion-label>
+      </div>
+    </ion-col>
+
+
+    <!-- My Slider -->
+    <ion-col size="12" size-md="12" size-lg="6" class="ion-no-padding">
+      <!-- Swiper is also a default slider component in the Ionic Framework -->
+      <ion-slides pager="true" #mySlider [options]="slideOpts" (ionSlidesDidLoad)='slidesDidLoad(mySlider)'>
+
+        <ion-slide>
+          <ion-img src="../../../assets/sale-0.jpg"></ion-img>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-img src="../../../assets/sale-1.jpg"></ion-img>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-img src="../../../assets/sale-2.jpg"></ion-img>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-img src="../../../assets/sale-3.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+
+    <!-- My Products -->
+    <ion-col class="all-products" size="12" size-md="12" size-lg="6">
+      <div class="title">
+        <h2>CLOTHES</h2>
+        <h5>See all</h5>
+      </div>
+
+
+      <div class="scroll">
+        <div class="product" *ngFor="let p of products; trackBy:trackByProduct" routerLink='../product' >
+
+          <div class="p-header">
+            <!-- need cols as if 10% deleted place is there -->
+            <ion-col size="6">
+              <span *ngIf="true" class="discount">10%</span>
+            </ion-col>
+
+            <ion-col size="6" class="ion-text-end">
+              <span>
+                <ion-icon *ngIf="true" color='danger' name="heart-outline"></ion-icon>
+                <ion-icon *ngIf="false" color='danger' name="heart"></ion-icon>
+              </span>
+            </ion-col>
+          </div>
+          <div class="p-image">
+            <img [src]='p.image' alt="">
+          </div>
+
+          <div class="p-name">
+            <p>{{p.name}}</p>
+          </div>
+
+          <ion-col class="footer ion-no-padding" size="12" size-md="12" size-lg="6">
+            <div class="p-assess">
+              <ion-label>0</ion-label>
+              <ion-icon name="star"></ion-icon>
+            </div>
+            <span class="price">{{p.price}} $ </span>
+          </ion-col>
+
+
+
+        </div>
+      </div>
+    </ion-col>
+
+    <!-- ************************************** -->
+
+    <ion-col class="all-products" size="12" size-md="12" size-lg="6">
+      <div class="title">
+        <h2>SHOES</h2>
+        <h5>See all</h5>
+      </div>
+
+
+      <div class="scroll">
+        <div class="product" *ngFor="let p of shoes; trackBy:trackByProduct">
+
+          <div class="p-header">
+            <!-- need cols as if 10% deleted place is there -->
+            <ion-col size="6">
+              <span *ngIf="true" class="discount">10%</span>
+            </ion-col>
+
+            <ion-col size="6" class="ion-text-end">
+              <span>
+                <ion-icon *ngIf="true" color='danger' name="heart-outline"></ion-icon>
+                <ion-icon *ngIf="false" color='danger' name="heart"></ion-icon>
+              </span>
+            </ion-col>
+          </div>
+          <div class="p-image">
+            <img [src]='p.image' alt="">
+          </div>
+
+          <div class="p-name">
+            <p>{{p.name}}</p>
+          </div>
+
+          <ion-col class="footer ion-no-padding" size="12" size-md="12" size-lg="6">
+            <div class="p-assess">
+              <ion-label>0</ion-label>
+              <ion-icon name="star"></ion-icon>
+            </div>
+            <span class="price">{{p.price}} $ </span>
+          </ion-col>
+
+
+
+        </div>
+      </div>
+    </ion-col>
+
+  </ion-row>
+</ion-content>

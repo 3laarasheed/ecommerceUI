@@ -1,0 +1,13 @@
+.container{
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header h1{
+    margin-top: 0;
+    font-weight: bold;
+    color: rgba(102,126,234,1);
+}
+

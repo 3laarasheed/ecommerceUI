@@ -9,6 +9,33 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+// MY FONTS
+@font-face {
+  font-family: "DINNextLTArabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/font/DINNextLTArabic-regular.ttf");
+}
+@font-face {
+  font-family: "DINNextLTArabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/font/DINNextLTArabic-Bold.ttf");
+}
+@font-face {
+  font-family: "DINNextLTArabic";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./assets/font/DINNextLTArabic-Black.ttf");
+}
+
+*{
+  font-family: 'DINNextLTArabic'
+}
+
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
@@ -16,7 +43,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +51,49 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.main-button{
+  --background: linear-gradient(90deg,rgba(102,126,234,1)0%, rgba(100,182,255,1)100%);
+  box-shadow: none;
+  height: 40px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+// .main-button::after{
+//   content: "";
+//   position: absolute;
+//   width: 80%;
+//   right: 10%;
+//   // bottom: 10;
+//   top: 0px;
+//   height: 40px;
+//   z-index: -1;
+//   box-shadow: 0px 20px 20px -17px rgba(0,111,255,1);
+// }
+
+ion-button:focus{
+  outline: none !important;
+}
+
+
+
+// removing lines of ios and android we will do it with search
+// ion-toolbar{
+//   --border-width: 0 !important
+// }
+
+// .header-md::after{
+//   background: none;
+// }
+
+// removing lines of ios and android we will do it with search
+ion-footer{
+  --border-width: 0 !important
+}
+
+.footer-md::before{
+  background: none;
+  // background-image: none !important;
+
+}

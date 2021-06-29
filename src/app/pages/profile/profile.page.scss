@@ -1,0 +1,21 @@
+.title {
+  color: rgba(102, 126, 234, 1);
+  font-weight: bold;
+}
+
+.profile-info {
+  // padding: 0 20px;
+
+  ion-item {
+    --border-color: transparent;
+
+    ion-label {
+      color: #919191;
+      font-size: larger;
+    }
+
+    ion-input {
+      --color: #434343;
+    }
+  }
+}

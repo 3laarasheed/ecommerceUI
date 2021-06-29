@@ -1,0 +1,49 @@
+ion-header {
+
+  ion-buttons {
+    ion-button {
+      width: 50px;
+      height: 50px;
+      ion-badge {
+        position: absolute;
+        top: -10px;
+        right: -2px;
+      }
+      ion-icon {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+ion-content{
+    .divider{
+        display: inline-block;
+        .type{
+            
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid red;
+            border-radius: .5rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .active{
+          background-color: aqua;
+        }
+        .products{
+          display:block;
+        }
+    }
+}
+
+
+
+// removing lines of ios and android we will do it with search
+// ion-toolbar{
+//   --border-width: 0 !important
+// }
+
+// .header-md::after{
+//   background: none;
+// }

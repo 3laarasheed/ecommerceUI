@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="../../../assets/menu_bar.svg" alt="">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="../../../assets/mylogo_200x200.png"></ion-img>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink='../cart'>
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger">4</ion-badge>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="title">Favorite</h1>
+
+  <ion-row>
+    <ion-col size="6" *ngFor="let item of arr">
+      <div class="cart-items">
+        <ion-card mode="ios">
+          <ion-card-content>
+
+            <ion-row>
+              <ion-col size="12">
+                <div class="item-img">
+                  <img src="../../../assets/p{{item}}.png" />
+                </div>
+              </ion-col>
+              <ion-col size="12">
+                <div class="item-info">
+                  <p>Men clothes wear</p>
+                  <p>$34.00</p>
+                </div>
+              </ion-col>
+
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>
